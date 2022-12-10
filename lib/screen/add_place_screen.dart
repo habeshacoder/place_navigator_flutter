@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places_navigation_flutter/widget/image_input.dart';
+import 'package:places_navigation_flutter/widget/location_input.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
 import 'package:places_navigation_flutter/providers/greate_places.dart';
@@ -40,17 +41,22 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
         children: [
           Expanded(
             child: Padding(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: Column(
                 children: [
                   TextField(
                     controller: _placeNameController,
-                    decoration: InputDecoration(labelText: 'name of the place'),
+                    decoration:
+                        const InputDecoration(labelText: 'name of the place'),
                   ),
                   const SizedBox(
                     height: 12,
                   ),
                   ImageInput(widget.pickimage),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  LocationInput(),
                 ],
               ),
             ),
